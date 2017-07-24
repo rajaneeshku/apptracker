@@ -18,7 +18,7 @@ public class CandidateInfoController {
     private CandidateService candidateService;
 
     @RequestMapping(
-            value = "/api/candidates",
+            value = "/api/candidates/all",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Collection<CandidateInfo>> getCandidates() {
@@ -35,7 +35,7 @@ public class CandidateInfoController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CandidateInfo> getCandidates(@PathVariable("id") Long id) {
 
-        CandidateInfo candidate = candidateService.findOne(id);
+        CandidateInfo candidate = candidateService.get(id);
         if (candidate == null) {
             return new ResponseEntity<CandidateInfo>(HttpStatus.NOT_FOUND);
         }
@@ -44,7 +44,7 @@ public class CandidateInfoController {
     }
 
     @RequestMapping(
-            value = "/api/candidates",
+            value = "/api/candidates/add",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -57,7 +57,7 @@ public class CandidateInfoController {
     }
 
     @RequestMapping(
-            value = "/api/candidates/{id}",
+            value = "/api/candidates/update/{id}",
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)

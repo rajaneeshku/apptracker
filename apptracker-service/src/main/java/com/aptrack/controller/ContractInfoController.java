@@ -16,12 +16,12 @@ public class ContractInfoController {
     private ContractService contractService;
 
     @RequestMapping(
-            value = "/api/contract/{id}",
+            value = "/api/contracts/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ContractInfo> getContract(@PathVariable("id") Long id) {
 
-        ContractInfo contract = contractService.findOne(id);
+        ContractInfo contract = contractService.get(id);
         if (contract == null) {
             return new ResponseEntity<ContractInfo>(HttpStatus.NOT_FOUND);
         }
@@ -30,7 +30,7 @@ public class ContractInfoController {
     }
 
     @RequestMapping(
-            value = "/api/contract",
+            value = "/api/contract/",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -44,7 +44,7 @@ public class ContractInfoController {
 
 
     @RequestMapping(
-            value = "/api/contract/{id}",
+            value = "/api/contract/update/{id}",
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)

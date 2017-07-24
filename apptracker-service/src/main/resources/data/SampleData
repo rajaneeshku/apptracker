@@ -1,0 +1,361 @@
+
+localhost:8080/api/candidates/all
+GET
+[
+    {
+        "aid": 1111,
+        "lastName": "GARIMELLA",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100
+    },
+    {
+        "aid": 2222,
+        "lastName": "GARIMELLA",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100
+    },
+    {
+        "aid": 3333,
+        "lastName": "Ga",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100
+    },
+    {
+        "aid": 4444,
+        "lastName": "GARIMELLA",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100
+    }
+]
+
+
+localhost:8080/api/candidates/1111
+GET
+{
+    "aid": 1111,
+    "lastName": "GARIMELLA",
+    "firstName": "SURYA",
+    "midInitial": null,
+    "prefFirstName": "MURTHY",
+    "email": "MURTHY@MTY.COM",
+    "contactPhone": "+011234567890",
+    "curStatus": 100
+}
+
+localhost:8080/api/candidates/add
+POST
+{
+    "aid": 3333,
+    "lastName": "G",
+    "firstName": "SURYA",
+    "midInitial": null,
+    "prefFirstName": "MURTHY",
+    "email": "MURTHY@MTY.COM",
+    "contactPhone": "+011234567890",
+    "curStatus": 100
+}
+
+localhost:8080/api/candidates/update/3333
+PUT
+{
+    "aid": 3333,
+    "lastName": "G",
+    "firstName": "SURYA",
+    "midInitial": null,
+    "prefFirstName": "MURTHY",
+    "email": "MURTHY@MTY.COM",
+    "contactPhone": "+011234567890",
+    "curStatus": 100
+}
+
+----------------------------------------
+
+localhost:8080/api/contract/1111
+GET
+
+{
+    "aid": 1111,
+    "appprovedContactNum": 2121,
+    "contractEndDte": "2017-07-18",
+    "cwAssignmentEndDte": "2017-07-19",
+    "candidateRoleTyp": "Contingent Worker",
+    "returnStatus": "New",
+    "formaerWorker": "CW",
+    "priorSid": null,
+    "priorDates": null,
+    "supplierName": "Supplier",
+    "cwWorkCity": "New york",
+    "cwWorkLocation": "Columbus",
+    "cwWorkMailDrop": "Mail Drp",
+    "homeZip": "10000",
+    "usArmedForces": "NO",
+    "registeredNotaryPublic": "YES",
+    "csiInfoAccess": "NO",
+    "candidateReferredToYou": "NO",
+    "referralOriginate": "2017-07-20",
+    "candiateSeletedWithinGuidelines": "NO",
+    "currentAddress": "4000, New york",
+    "serviceType": "Service Type",
+    "fullORPartTime": "Full",
+    "paymentType": "Fixed price",
+    "costCenter": "cosr cen",
+    "cwJobCode": "JOB 20202",
+    "lobName": "Digital",
+    "cwAssignmentStartDte": "2017-07-21",
+    "sponsorId": "SPONSORID-1",
+    "sponsorLastName": "SP LNAME",
+    "sponsorFirstName": "SP FNAME",
+    "emailRequired": "NO",
+    "spocEmail": "abc@abc.com",
+    "itornonIT": "IT"
+}
+
+localhost:8080/api/contract/
+POST
+{
+    "aid": 4444,
+    "appprovedContactNum": 2121,
+    "contractEndDte": "2017-07-18",
+    "cwAssignmentEndDte": "2017-07-19",
+    "candidateRoleTyp": "Contingent Worker",
+    "returnStatus": "New",
+    "formaerWorker": "CW",
+    "priorSid": null,
+    "priorDates": null,
+    "supplierName": "Supplier",
+    "cwWorkCity": "New york",
+    "cwWorkLocation": "Columbus",
+    "cwWorkMailDrop": "Mail Drp",
+    "homeZip": "10000",
+    "usArmedForces": "NO",
+    "registeredNotaryPublic": "YES",
+    "csiInfoAccess": "NO",
+    "candidateReferredToYou": "NO",
+    "referralOriginate": "2017-07-20",
+    "candiateSeletedWithinGuidelines": "NO",
+    "currentAddress": "4000, New york",
+    "serviceType": "Service Type",
+    "fullORPartTime": "Full",
+    "paymentType": "Fixed price",
+    "costCenter": "cosr cen",
+    "cwJobCode": "JOB 20202",
+    "lobName": "Digital",
+    "cwAssignmentStartDte": "2017-07-21",
+    "sponsorId": "SPONSORID-1",
+    "sponsorLastName": "SP LNAME",
+    "sponsorFirstName": "SP FNAME",
+    "emailRequired": "NO",
+    "spocEmail": "abc@abc.com",
+    "itornonIT": "IT"
+}
+
+localhost:8080/api/contract/update/1111
+PUT
+{
+    "aid": 1111,
+    "appprovedContactNum": 88888,
+    "contractEndDte": "2017-07-17",
+    "cwAssignmentEndDte": "2017-07-18",
+    "candidateRoleTyp": "Contingent Worker",
+    "returnStatus": "New",
+    "formaerWorker": "CW",
+    "priorSid": null,
+    "priorDates": null,
+    "supplierName": "Supplier",
+    "cwWorkCity": "New york",
+    "cwWorkLocation": "Columbus",
+    "cwWorkMailDrop": "Mail Drp",
+    "homeZip": "10000",
+    "usArmedForces": "NO",
+    "registeredNotaryPublic": "YES",
+    "csiInfoAccess": "NO",
+    "candidateReferredToYou": "YES",
+    "referralOriginate": "2017-07-20",
+    "candiateSeletedWithinGuidelines": "NO",
+    "currentAddress": "4000, New york",
+    "serviceType": "Service Type",
+    "fullORPartTime": "Full",
+    "paymentType": "Fixed price",
+    "costCenter": "cosr cen",
+    "cwJobCode": "JOB 20202",
+    "lobName": "Digital",
+    "cwAssignmentStartDte": "2017-07-20",
+    "sponsorId": "SPONSORID-1",
+    "sponsorLastName": "SP LNAME",
+    "sponsorFirstName": "SP FNAME",
+    "emailRequired": "NO",
+    "spocEmail": "abc@abc.com",
+    "itornonIT": "IT"
+}
+
+localhost:8080/api/onboard/list
+GET
+
+[
+    {
+        "lastName": "GARIMELLA",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100,
+        "aid": 1111,
+        "onboardingStatus": {
+            "aid": 1111,
+            "bgCheck": 100,
+            "bgCheckUpdTm": 1500781051000,
+            "demograph": 200,
+            "demographUpdTm": 1500781051000,
+            "comments": "Comments123",
+            "lastUpdTm": 1500781051000,
+            "lastUpdBy": "Murthy"
+        }
+    },
+    {
+        "lastName": "GARIMELLA",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100,
+        "aid": 2222,
+        "onboardingStatus": {
+            "aid": 2222,
+            "bgCheck": 300,
+            "bgCheckUpdTm": 1500781248000,
+            "demograph": 400,
+            "demographUpdTm": 1500781248000,
+            "comments": "Comments456",
+            "lastUpdTm": 1500781248000,
+            "lastUpdBy": "Murthy"
+        }
+    },
+    {
+        "lastName": "Ga",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100,
+        "aid": 3333,
+        "onboardingStatus": {
+            "aid": 3333,
+            "bgCheck": 600,
+            "bgCheckUpdTm": 1500781367000,
+            "demograph": 900,
+            "demographUpdTm": 1500781367000,
+            "comments": "Comments789",
+            "lastUpdTm": 1500781367000,
+            "lastUpdBy": "Milan"
+        }
+    },
+    {
+        "lastName": "GARIMELLA",
+        "firstName": "SURYA",
+        "midInitial": null,
+        "prefFirstName": "MURTHY",
+        "email": "MURTHY@MTY.COM",
+        "contactPhone": "+011234567890",
+        "curStatus": 100,
+        "aid": 4444,
+        "onboardingStatus": {
+            "aid": 4444,
+            "bgCheck": 100,
+            "bgCheckUpdTm": 1500834835000,
+            "demograph": 200,
+            "demographUpdTm": 1500834835000,
+            "comments": "Sample comments",
+            "lastUpdTm": 1500834835000,
+            "lastUpdBy": "Mike"
+        }
+    }
+]
+
+localhost:8080/api/onboard/view/1111
+GET
+
+{
+    "aid": 1111,
+    "lastName": "GARIMELLA",
+    "firstName": "SURYA",
+    "midInitial": null,
+    "prefFirstName": "MURTHY",
+    "email": "MURTHY@MTY.COM",
+    "contactPhone": "+011234567890",
+    "curStatus": 100,
+    "onboardingStatus": {
+        "aid": 1111,
+        "bgCheck": 100,
+        "bgCheckUpdTm": 1500781051000,
+        "demograph": 200,
+        "demographUpdTm": 1500781051000,
+        "comments": "Comments123",
+        "lastUpdTm": 1500781051000,
+        "lastUpdBy": "Murthy"
+    },
+    "contractInfo": {
+        "aid": 1111,
+        "appprovedContactNum": 2121,
+        "contractEndDte": "2017-07-17",
+        "cwAssignmentEndDte": "2017-07-18",
+        "candidateRoleTyp": "Contingent Worker",
+        "returnStatus": "New",
+        "formaerWorker": "CW",
+        "priorSid": null,
+        "priorDates": null,
+        "supplierName": "Supplier",
+        "cwWorkCity": "New york",
+        "cwWorkLocation": "Columbus",
+        "cwWorkMailDrop": "Mail Drp",
+        "homeZip": "10000",
+        "usArmedForces": "NO",
+        "registeredNotaryPublic": "YES",
+        "csiInfoAccess": "NO",
+        "candidateReferredToYou": "NO",
+        "referralOriginate": "2017-07-20",
+        "candiateSeletedWithinGuidelines": "NO",
+        "currentAddress": "4000, New york",
+        "serviceType": "Service Type",
+        "fullORPartTime": "Full",
+        "paymentType": "Fixed price",
+        "costCenter": "cosr cen",
+        "cwJobCode": "JOB 20202",
+        "lobName": "Digital",
+        "cwAssignmentStartDte": "2017-07-20",
+        "sponsorId": "SPONSORID-1",
+        "sponsorLastName": "SP LNAME",
+        "sponsorFirstName": "SP FNAME",
+        "emailRequired": "NO",
+        "spocEmail": "abc@abc.com",
+        "itornonIT": "IT"
+    }
+}
+
+localhost:8080/api/onboard/status
+PUT
+ {
+        "aid": 6666,
+        "bgCheck": 500,
+        "demograph": 700,
+        "comments": "Comments123",
+        "lastUpdBy": "Murthy"
+    }

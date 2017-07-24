@@ -2,21 +2,19 @@ package com.aptrack.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
- * Created by Murthy on 7/15/2017.
+ * Created by Murthy on 7/23/2017.
  */
-
 @Data
 @Entity
-public class CandidateInfo {
-
+@Table(name = "candidate_info",schema = "apptracker")
+public class OnboardingSummaryView //extends CandidateData
+{
     @Id
     private Long aid;
+
     private String lastName;
     private String firstName;
     private String midInitial;
@@ -25,7 +23,12 @@ public class CandidateInfo {
     private String contactPhone;
     private Integer curStatus;
 
-/*    @OneToOne
+    @OneToOne
     @JoinColumn(name="AID", nullable=true)
-    private OnboardingStatus onboardingStatus;*/
+    private OnboardingStatus onboardingStatus;
+
+
+    @OneToOne
+    @JoinColumn(name="AID", nullable=true)
+    private ContractInfo contractInfo;
 }

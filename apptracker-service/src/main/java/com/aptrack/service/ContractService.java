@@ -10,7 +10,7 @@ import java.util.Collection;
 public interface ContractService {
     Collection<ContractInfo> findAll();
 
-    ContractInfo findOne(Long aid);
+    ContractInfo get(Long aid);
 
     ContractInfo create(ContractInfo contract);
 

@@ -2,9 +2,10 @@ package com.aptrack.service;
 
 import com.aptrack.entity.ContractInfo;
 import com.aptrack.repository.ContractInfoRepository;
+import static org.springframework.beans.BeanUtils.copyProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import  static com.aptrack.utils.ApptrackerUtils.getNullPropertyNames;
 import java.util.Collection;
 
 /**
@@ -22,7 +23,7 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public ContractInfo findOne(Long aid) {
+    public ContractInfo get(Long aid) {
         return contractInfoRepository.findOne(aid);
     }
 
@@ -32,7 +33,10 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public ContractInfo update(ContractInfo contract) {
-        return contractInfoRepository.save(contract);
+    public ContractInfo update(ContractInfo updated) {
+
+        ContractInfo existing = contractInfoRepository.findOne(updated.getAid());
+        copyProperties(updated,existing, getNullPropertyNames(updated));
+        return contractInfoRepository.save(existing);
     }
 }
