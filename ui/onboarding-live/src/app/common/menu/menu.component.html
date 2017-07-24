@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+                <button type="button" 
+                        class="navbar-toggle collapsed"
+                        (click)="toggleState()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">{{appName}}</a>
+        </div>
+         <div class="collapse navbar-collapse"
+              [ngClass]="{ 'in': displayChildMenuFlg }">
+            <ul class="nav navbar-nav">
+              <li><a  (click)="collapseMenu()" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+              <li><a  (click)="collapseMenu()" routerLink="/add-candidate" routerLinkActive="active">add-candidate</a></li>
+              <li><a  (click)="collapseMenu()" routerLink="/candidate-details/123" routerLinkActive="active">Candidate Details</a></li>
+              <li><a  (click)="collapseMenu()" routerLink="/idrf" routerLinkActive="active">IDRF</a></li>
+              <li><a  (click)="collapseMenu()" routerLink="/settings" routerLinkActive="active">Settings</a></li>
+              <li><a  (click)="collapseMenu()" routerLink="" routerLinkActive="active">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
