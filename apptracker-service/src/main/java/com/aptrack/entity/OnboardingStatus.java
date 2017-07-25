@@ -1,11 +1,11 @@
 package com.aptrack.entity;
 
-import lombok.*;
+import com.aptrack.entity.converter.LocalDateTimeConverter;
+import lombok.Data;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import java.sql.Timestamp;
 
 /**
  * Created by Murthy on 7/19/2017.
@@ -13,13 +13,16 @@ import java.sql.Timestamp;
 @Data
 @Entity
 public class OnboardingStatus {
-   @Id
+    @Id
     private Long aid;
     private Integer bgCheck;
-    private Timestamp bgCheckUpdTm;
+    @Convert(converter = LocalDateTimeConverter.class)
+    private String bgCheckUpdTm;
     private Integer demograph;
-    private Timestamp demographUpdTm;
+    @Convert(converter = LocalDateTimeConverter.class)
+    private String demographUpdTm;
     private String comments;
-    private Timestamp lastUpdTm;
+    @Convert(converter = LocalDateTimeConverter.class)
+    private String lastUpdTm;
     private String lastUpdBy;
 }

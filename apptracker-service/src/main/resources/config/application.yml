@@ -40,3 +40,9 @@ spring:
     validation-query: select 1;
     time-between-eviction-runs-millis: 60000
     min-evictable-idle-time-millis: 300000
+
+### --------------------------###
+onboarding:
+  appHome:
+  templateLoc: C:\\apptracker\template.xls
+  reportLoc: C:\\apptracker\report.xls

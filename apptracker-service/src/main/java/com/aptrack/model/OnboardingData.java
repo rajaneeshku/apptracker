@@ -8,7 +8,7 @@ import lombok.Builder;
  * Created by Murthy on 7/19/2017.
  */
 @Builder
-public class IDRFInfo {
+public class OnboardingData {
 
     private CandidateInfo candidateInfo;
     private ContractInfo contractInfo;

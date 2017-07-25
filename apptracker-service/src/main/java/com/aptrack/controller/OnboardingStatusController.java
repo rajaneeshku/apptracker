@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Murthy on 7/23/2017.
@@ -28,5 +25,15 @@ public class OnboardingStatusController {
     public ResponseEntity<OnboardingStatus> update(
             @RequestBody OnboardingStatus status) {
         return new ResponseEntity<OnboardingStatus>(statusService.update(status), HttpStatus.CREATED);
+    }
+
+    @RequestMapping(
+            value = "/api/onboard/status/{id}",
+            method = RequestMethod.GET,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<OnboardingStatus> get(
+            @PathVariable("id") Long id) {
+        return new ResponseEntity<OnboardingStatus>(statusService.get(id), HttpStatus.OK);
     }
 }
