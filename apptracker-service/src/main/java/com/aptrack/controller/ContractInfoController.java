@@ -44,7 +44,7 @@ public class ContractInfoController {
 
 
     @RequestMapping(
-            value = "/api/contract/update/{id}",
+            value = "/api/contract/update/",
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)

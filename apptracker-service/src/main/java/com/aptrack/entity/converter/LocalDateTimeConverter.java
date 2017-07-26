@@ -3,8 +3,10 @@ package com.aptrack.entity.converter;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
+import static com.aptrack.utils.ApptrackerUtils.dbTimestampToString;
+import static com.aptrack.utils.ApptrackerUtils.stringToDbTimestamp;
+
 
 /**
  * Created by Murthy on 7/24/2017.
@@ -14,19 +16,14 @@ public class LocalDateTimeConverter implements AttributeConverter<String, Timest
 
     @Override
     public Timestamp convertToDatabaseColumn(String attribute) {
-        return attribute == null ? null : Timestamp.valueOf(attribute);
+        return attribute == null ? new Timestamp(System.currentTimeMillis()) : stringToDbTimestamp(attribute);
     }
-
-/*    @Override
-    public LocalDateTime convertToEntityAttribute(Timestamp dbData) {
-        return dbData == null ? null : dbData.toLocalDateTime();
-    }*/
 
     @Override
     public String convertToEntityAttribute(Timestamp dbData) {
-
-        LocalDateTime persisted = dbData.toLocalDateTime();
-
-        return dbData == null ? null : persisted.format(DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss"));
+        return dbData == null ? null : dbTimestampToString(dbData);
     }
+
+
 }
+

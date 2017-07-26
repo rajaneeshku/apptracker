@@ -86,14 +86,14 @@ PUT
 
 ----------------------------------------
 
-localhost:8080/api/contract/1111
+localhost:8080/api/contracts/1111
 GET
 
 {
     "aid": 1111,
     "appprovedContactNum": 2121,
-    "contractEndDte": "2017-07-18",
-    "cwAssignmentEndDte": "2017-07-19",
+    "contractEndDte": "07-17-2017",
+    "cwAssignmentEndDte": "07-18-2017",
     "candidateRoleTyp": "Contingent Worker",
     "returnStatus": "New",
     "formaerWorker": "CW",
@@ -117,7 +117,7 @@ GET
     "costCenter": "cosr cen",
     "cwJobCode": "JOB 20202",
     "lobName": "Digital",
-    "cwAssignmentStartDte": "2017-07-21",
+    "cwAssignmentStartDte": "07-20-2017",
     "sponsorId": "SPONSORID-1",
     "sponsorLastName": "SP LNAME",
     "sponsorFirstName": "SP FNAME",
@@ -129,10 +129,10 @@ GET
 localhost:8080/api/contract/
 POST
 {
-    "aid": 4444,
+    "aid": 1111,
     "appprovedContactNum": 2121,
-    "contractEndDte": "2017-07-18",
-    "cwAssignmentEndDte": "2017-07-19",
+    "contractEndDte": "07-27-2027",
+    "cwAssignmentEndDte": "07-18-2017",
     "candidateRoleTyp": "Contingent Worker",
     "returnStatus": "New",
     "formaerWorker": "CW",
@@ -156,7 +156,7 @@ POST
     "costCenter": "cosr cen",
     "cwJobCode": "JOB 20202",
     "lobName": "Digital",
-    "cwAssignmentStartDte": "2017-07-21",
+    "cwAssignmentStartDte": "07-20-2017",
     "sponsorId": "SPONSORID-1",
     "sponsorLastName": "SP LNAME",
     "sponsorFirstName": "SP FNAME",
@@ -165,13 +165,13 @@ POST
     "itornonIT": "IT"
 }
 
-localhost:8080/api/contract/update/1111
+localhost:8080/api/contract/update/
 PUT
 {
     "aid": 1111,
-    "appprovedContactNum": 88888,
-    "contractEndDte": "2017-07-17",
-    "cwAssignmentEndDte": "2017-07-18",
+    "appprovedContactNum": 2121,
+    "contractEndDte": "07-27-2027",
+    "cwAssignmentEndDte": "07-18-2017",
     "candidateRoleTyp": "Contingent Worker",
     "returnStatus": "New",
     "formaerWorker": "CW",
@@ -185,7 +185,7 @@ PUT
     "usArmedForces": "NO",
     "registeredNotaryPublic": "YES",
     "csiInfoAccess": "NO",
-    "candidateReferredToYou": "YES",
+    "candidateReferredToYou": "NO",
     "referralOriginate": "2017-07-20",
     "candiateSeletedWithinGuidelines": "NO",
     "currentAddress": "4000, New york",
@@ -195,7 +195,7 @@ PUT
     "costCenter": "cosr cen",
     "cwJobCode": "JOB 20202",
     "lobName": "Digital",
-    "cwAssignmentStartDte": "2017-07-20",
+    "cwAssignmentStartDte": "07-20-2017",
     "sponsorId": "SPONSORID-1",
     "sponsorLastName": "SP LNAME",
     "sponsorFirstName": "SP FNAME",
@@ -203,7 +203,6 @@ PUT
     "spocEmail": "abc@abc.com",
     "itornonIT": "IT"
 }
-
 localhost:8080/api/onboard/list
 GET
 
@@ -359,3 +358,16 @@ PUT
         "comments": "Comments123",
         "lastUpdBy": "Murthy"
     }
+
+localhost:8080/api/onboard/status/1111
+GET
+{
+    "aid": 1111,
+    "bgCheck": 100,
+    "bgCheckUpdTm": "07-25-2017 22:48:26",
+    "demograph": 200,
+    "demographUpdTm": "07-30-2015 22:01:00",
+    "comments": "Sample comments",
+    "lastUpdTm": "07-28-2019 22:41:00",
+    "lastUpdBy": "Mike"
+}

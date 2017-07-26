@@ -7,18 +7,21 @@ package com.aptrack.entity.converter;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.sql.Date;
-import java.time.LocalDate;
 
-@Converter(autoApply = true)
-public class LocalDateConverter implements AttributeConverter<LocalDate, Date> {
+import static com.aptrack.utils.ApptrackerUtils.dbDateToString;
+import static com.aptrack.utils.ApptrackerUtils.stringToDbDate;
+
+
+@Converter(autoApply = false)
+public class LocalDateConverter implements AttributeConverter<String, Date> {
 
     @Override
-    public Date convertToDatabaseColumn(LocalDate attribute) {
-        return attribute == null ? null : Date.valueOf(attribute);
+    public Date convertToDatabaseColumn(String attribute) {
+        return attribute == null ? null : stringToDbDate(attribute);
     }
 
     @Override
-    public LocalDate convertToEntityAttribute(Date dbData) {
-        return dbData == null ? null : dbData.toLocalDate();
+    public String convertToEntityAttribute(Date dbData) {
+        return dbData == null ? null : dbDateToString(dbData);
     }
 }

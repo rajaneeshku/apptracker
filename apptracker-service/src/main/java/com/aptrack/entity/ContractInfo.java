@@ -2,8 +2,11 @@ package com.aptrack.entity;
 
 import com.aptrack.common.FormerWorker;
 import com.aptrack.common.YesORNo;
+import com.aptrack.entity.converter.LocalDateConverter;
+import com.aptrack.entity.converter.LocalDateTimeConverter;
 import lombok.Data;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
@@ -18,8 +21,12 @@ public class ContractInfo {
     @Id
     private Long aid;
     private Long appprovedContactNum;
-    private Date contractEndDte;
-    private Date cwAssignmentEndDte;
+
+    @Convert(converter = LocalDateConverter.class)
+    private String contractEndDte;
+
+    @Convert(converter = LocalDateConverter.class)
+    private String cwAssignmentEndDte;
     private String candidateRoleTyp; //TODO: ENUM
     private String returnStatus;
     private FormerWorker formaerWorker;
@@ -44,18 +51,13 @@ public class ContractInfo {
     private String costCenter;
     private String cwJobCode;
     private String lobName;
-    private Date cwAssignmentStartDte;
+
+    @Convert(converter = LocalDateConverter.class)
+    private String cwAssignmentStartDte;
     private String sponsorId;
     private String sponsorLastName;
     private String sponsorFirstName;
     private YesORNo emailRequired;
     private String spocEmail;
-
-
-
-
-
-
-
 
 }
